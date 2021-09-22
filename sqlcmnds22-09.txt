@@ -1,0 +1,91 @@
+create table a1 (NAME varchar(200), SALARY int);
+
+select * from a1;
+
+insert into a1 (NAME, SALARY) values('abc',10000);
+savepoint aa1;
+insert into a1 (NAME, SALARY) values('lmn',100000);
+insert into a1 (NAME, SALARY) values('pqr',40000);
+savepoint aa2;
+insert into a1 (NAME, SALARY) values('xyz',50000);
+
+drop table a1;
+
+
+select Name, MAX(SALARY) from a1 where salary is not NULL group by NAME;
+
+
+commit;
+
+drop table a1;
+
+
+insert into a1 (NAME, SALARY) values('ayz',50000);
+
+rollback;
+
+
+
+
+
+
+
+create table a1 (salesid int,name varchar(200),city varchar(200), comission float);
+
+
+insert into a1 (salesid ,name ,city , comission ) values (5001, 'James Hong', 'Newyork', 0.15);
+insert into a1 (salesid ,name ,city , comission ) values (5002, 'Nail Knite', 'Paris', 0.13);
+insert into a1 (salesid ,name ,city , comission ) values (5005, 'Pit Alex', 'London', 0.11);
+insert into a1 (salesid ,name ,city , comission ) values (5006, 'Mc Lyon', 'Paris', 0.14);
+insert into a1 (salesid ,name ,city , comission ) values (5007, 'Paul  Adam', 'Rome', 0.13);
+insert into a1 (salesid ,name ,city , comission ) values (5003, 'Lauson Hen', 'San Jose', 0.12);
+
+
+select * from a1;
+
+Select name,city from a1 where a1.city = 'Paris' ;
+
+drop table a1;
+
+
+
+
+
+
+create table a3 (year int,subject varchar(200),winner varchar(200),country varchar(200),category varchar(200));
+
+
+insert into a3 (year ,subject ,winner , country,category  ) values (1970,'Physics', 'Hannes Alfaven', 'Sweden', 'Scientist');
+insert into a3 (year ,subject ,winner , country,category  ) values (1970,'Physics', 'Louis Neel', 'France', 'Scientist');
+insert into a3 (year ,subject ,winner , country,category  ) values (1970,'Chemistry', 'Luis Federico Leloir', 'France', 'Scientist');
+insert into a3 (year ,subject ,winner , country,category  ) values (1970,'Physiology', 'Ulf von Euler', 'Sweden', 'Scientist');
+insert into a3 (year ,subject ,winner , country,category  ) values (1970,'Physiology', 'Bernard Katz', 'Germany', 'Scientist');
+insert into a3 (year ,subject ,winner , country,category  ) values (1970,'Literature', 'Aleksandr Solzheintsyn', 'Russia', 'Linguist');
+insert into a3 (year ,subject ,winner , country,category  ) values (1970,'Economics', 'Paul Samuelson', 'USA', 'Economist');
+insert into a3 (year ,subject ,winner , country,category  ) values (1970,'Physiology', 'Julius Axelrod', 'USA', 'Scientist');
+insert into a3 (year ,subject ,winner , country,category  ) values (1971,'Physics', 'Dennis Gabor', 'Hungary', 'Scientist');
+
+
+
+
+
+select * from a3;
+
+select *  from a3 where a3.subject='Chemistry' and a3.year = 1970;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
